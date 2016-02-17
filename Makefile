@@ -1,4 +1,5 @@
 PKG_NAME := perl-Path-Class
-URL := http://www.cpan.org/CPAN/authors/id/K/KW/KWILLIAMS/Path-Class-0.35.tar.gz
+URL := http://www.cpan.org/CPAN/authors/id/K/KW/KWILLIAMS/Path-Class-0.36.tar.gz
+ARCHIVES :=
 
 include ../common/Makefile.common

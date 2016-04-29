@@ -4,7 +4,7 @@
 #
 Name     : perl-Path-Class
 Version  : 0.36
-Release  : 9
+Release  : 10
 URL      : http://www.cpan.org/CPAN/authors/id/K/KW/KWILLIAMS/Path-Class-0.36.tar.gz
 Source0  : http://www.cpan.org/CPAN/authors/id/K/KW/KWILLIAMS/Path-Class-0.36.tar.gz
 Summary  : 'Cross-platform path specification manipulation'

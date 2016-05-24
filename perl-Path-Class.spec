@@ -4,12 +4,12 @@
 #
 Name     : perl-Path-Class
 Version  : 0.36
-Release  : 11
+Release  : 12
 URL      : http://www.cpan.org/CPAN/authors/id/K/KW/KWILLIAMS/Path-Class-0.36.tar.gz
 Source0  : http://www.cpan.org/CPAN/authors/id/K/KW/KWILLIAMS/Path-Class-0.36.tar.gz
 Summary  : 'Cross-platform path specification manipulation'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0-Perl GPL-1.0
 Requires: perl-Path-Class-doc
 BuildRequires : perl(Module::Build)
 
@@ -58,11 +58,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.22.0/Path/Class.pm
-/usr/lib/perl5/site_perl/5.22.0/Path/Class/Dir.pm
-/usr/lib/perl5/site_perl/5.22.0/Path/Class/Entity.pm
-/usr/lib/perl5/site_perl/5.22.0/Path/Class/File.pm
-/usr/lib/perl5/site_perl/5.22.0/Path/README.pod
+/usr/lib/perl5/site_perl/5.24.0/Path/Class.pm
+/usr/lib/perl5/site_perl/5.24.0/Path/Class/Dir.pm
+/usr/lib/perl5/site_perl/5.24.0/Path/Class/Entity.pm
+/usr/lib/perl5/site_perl/5.24.0/Path/Class/File.pm
+/usr/lib/perl5/site_perl/5.24.0/Path/README.pod
 
 %files doc
 %defattr(-,root,root,-)

@@ -4,7 +4,7 @@
 #
 Name     : perl-Path-Class
 Version  : 0.37
-Release  : 15
+Release  : 16
 URL      : http://www.cpan.org/CPAN/authors/id/K/KW/KWILLIAMS/Path-Class-0.37.tar.gz
 Source0  : http://www.cpan.org/CPAN/authors/id/K/KW/KWILLIAMS/Path-Class-0.37.tar.gz
 Summary  : 'Cross-platform path specification manipulation'
@@ -63,11 +63,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.0/Path/Class.pm
-/usr/lib/perl5/site_perl/5.26.0/Path/Class/Dir.pm
-/usr/lib/perl5/site_perl/5.26.0/Path/Class/Entity.pm
-/usr/lib/perl5/site_perl/5.26.0/Path/Class/File.pm
-/usr/lib/perl5/site_perl/5.26.0/Path/README.pod
+/usr/lib/perl5/site_perl/5.26.1/Path/Class.pm
+/usr/lib/perl5/site_perl/5.26.1/Path/Class/Dir.pm
+/usr/lib/perl5/site_perl/5.26.1/Path/Class/Entity.pm
+/usr/lib/perl5/site_perl/5.26.1/Path/Class/File.pm
+/usr/lib/perl5/site_perl/5.26.1/Path/README.pod
 
 %files doc
 %defattr(-,root,root,-)

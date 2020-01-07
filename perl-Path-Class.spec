@@ -4,13 +4,14 @@
 #
 Name     : perl-Path-Class
 Version  : 0.37
-Release  : 28
+Release  : 29
 URL      : http://www.cpan.org/CPAN/authors/id/K/KW/KWILLIAMS/Path-Class-0.37.tar.gz
 Source0  : http://www.cpan.org/CPAN/authors/id/K/KW/KWILLIAMS/Path-Class-0.37.tar.gz
 Summary  : 'Cross-platform path specification manipulation'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Path-Class-license = %{version}-%{release}
+Requires: perl-Path-Class-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -22,6 +23,7 @@ Cross-platform path specification manipulation
 Summary: dev components for the perl-Path-Class package.
 Group: Development
 Provides: perl-Path-Class-devel = %{version}-%{release}
+Requires: perl-Path-Class = %{version}-%{release}
 
 %description dev
 dev components for the perl-Path-Class package.
@@ -35,14 +37,24 @@ Group: Default
 license components for the perl-Path-Class package.
 
 
+%package perl
+Summary: perl components for the perl-Path-Class package.
+Group: Default
+Requires: perl-Path-Class = %{version}-%{release}
+
+%description perl
+perl components for the perl-Path-Class package.
+
+
 %prep
 %setup -q -n Path-Class-0.37
+cd %{_builddir}/Path-Class-0.37
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -52,7 +64,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -61,7 +73,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Path-Class
-cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Path-Class/LICENSE
+cp %{_builddir}/Path-Class-0.37/LICENSE %{buildroot}/usr/share/package-licenses/perl-Path-Class/ce667e1cc573310ddb6d33fbcb07b993ba0c1562
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -74,10 +86,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Path/Class.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Path/Class/Dir.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Path/Class/Entity.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Path/Class/File.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -88,4 +96,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-Path-Class/LICENSE
+/usr/share/package-licenses/perl-Path-Class/ce667e1cc573310ddb6d33fbcb07b993ba0c1562
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Path/Class.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Path/Class/Dir.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Path/Class/Entity.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Path/Class/File.pm

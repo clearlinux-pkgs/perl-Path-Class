@@ -100,7 +100,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/Path/Class.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Path/Class/Dir.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Path/Class/Entity.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Path/Class/File.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Path/Class.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Path/Class/Dir.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Path/Class/Entity.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Path/Class/File.pm
